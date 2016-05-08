@@ -78,5 +78,5 @@ class File(models.Model):
 
     class Meta:
         db_table = 'files'
-        verbose_name = u'файл'
-        verbose_name_plural = u'файлы'
+        verbose_name = 'file'
+        verbose_name_plural = 'files'

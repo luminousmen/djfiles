@@ -70,3 +70,6 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+
+# just for demo project
+MEDIA_URL = '/files/'

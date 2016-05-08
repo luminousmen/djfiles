@@ -1,7 +1,7 @@
 DJFiles
 =====
 
-Files is a simple Django app to add files to project.
+DJFiles is a simple Django app for manage static files of your project.
 
 ### Requirements
 
@@ -10,7 +10,7 @@ Files is a simple Django app to add files to project.
 
 ### Installation
 
-1. Add "djfiles" to your INSTALLED_APPS setting like this:
+Add ```djfiles``` to your INSTALLED_APPS setting like this:
 
 ```
 INSTALLED_APPS = [
@@ -20,7 +20,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-2. Apply migrations:
+Apply ```djfiles``` migrations:
 
 ```bash
 $ python manage.py migrate djfiles

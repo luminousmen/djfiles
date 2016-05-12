@@ -7,6 +7,7 @@ DJFiles is a simple Django app for manage static files of your project.
 
 ### Requirements
 
+* Python == 2.7
 * Django >= 1.8
 * unicode-slugify
 
@@ -25,5 +26,5 @@ INSTALLED_APPS = [
 Apply ```djfiles``` migrations:
 
 ```bash
-$ python manage.py migrate djfiles
+$ ./manage.py migrate djfiles
 ```

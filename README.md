@@ -10,7 +10,6 @@ DJFiles is a simple Django app for manage static files of your project.
 
 * Python == 2.7
 * Django >= 1.8
-* unicode-slugify
 
 ### Installation
 

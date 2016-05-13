@@ -27,8 +27,4 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
-    
-    install_requires=[
-        'unicode-slugify',
-    ],
 )

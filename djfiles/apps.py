@@ -6,4 +6,4 @@ from django.apps import AppConfig
 class FilesConfig(AppConfig):
 	
     name = u'djfiles'
-    verbose_name = u'Файлы'
+    verbose_name = u'DJFiles'

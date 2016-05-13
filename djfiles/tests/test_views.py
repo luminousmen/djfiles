@@ -29,3 +29,7 @@ class ViewTestCase(TestCase):
 		content = "attachment; filename={} - {}".format(self.with_file.content, self.with_file.slug)
 
 		self.assertEqual(response['Content-Disposition'], content)
+
+	def tearDown(self):
+		self.no_file.delete()
+		self.with_file.delete()

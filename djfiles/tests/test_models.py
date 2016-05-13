@@ -8,7 +8,7 @@ from ..models import File
 class ModelTestCase(TestCase):
 
 	def setUp(self):
-		self.no_slug_file = File(slug='test')
+		self.no_slug_file = File.objects.create(slug='test')
 
 
 	def test_model_name(self):
@@ -19,3 +19,7 @@ class ModelTestCase(TestCase):
 		self.no_slug_file.save()
 		f = File.objects.get(pk=1)
 		self.assertEqual(f.slug, 'test')
+
+
+	def tearDown(self):
+		self.no_slug_file.delete()

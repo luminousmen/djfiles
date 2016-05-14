@@ -4,7 +4,9 @@
 DJFiles
 =====
 
-DJFiles is a simple Django app for manage static files of your project.
+DJFiles is a simple Django app for manage static files of your project. 
+
+Using this app you will be able to save static files through admin panel. Files will be saved in ```/media/``` directory of your project. It's useful if you are not always have access to server or have a content manager who responsible for managing such  files.
 
 ### Requirements
 

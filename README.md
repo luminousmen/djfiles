@@ -17,6 +17,10 @@ Using this app you will be able to save static files through admin panel. Files 
 
 ### Installation
 
+```bash
+$ pip install django-djfiles
+```
+
 Add ```djfiles``` to your INSTALLED_APPS setting like this:
 
 ```

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from __future__ import unicode_literals
 import os
 
 from django.test import TestCase
@@ -9,8 +10,14 @@ from django.core.files.uploadedfile import SimpleUploadedFile
 from ..admin import FileAdmin, FileForm
 from ..models import File, on_save, on_delete
 
-
 class ModelAdminTests(TestCase):
+
+	def setUp(self):
+		# creating empty file
+		self.f = open("test.txt", 'wb')
+		self.f.write(str("file_content").encode('utf-8'))
+		self.f = open("test.txt", 'rb')
+
 
 	def test_validate_empty_form(self):
 		form = FileForm()
@@ -19,7 +26,7 @@ class ModelAdminTests(TestCase):
 
 
 	def test_validate_full_form(self):
-		uploadedfile = SimpleUploadedFile("test.txt", "file_content")
+		uploadedfile = SimpleUploadedFile("test.txt", self.f.read())
 		form = FileForm({'slug': 'test'}, {'content': uploadedfile})
 
 		self.assertTrue(form.is_valid())
@@ -27,7 +34,7 @@ class ModelAdminTests(TestCase):
 
 	def test_save_form(self):
 		# save valid admin form
-		uploadedfile = SimpleUploadedFile("test.txt", "file_content")
+		uploadedfile = SimpleUploadedFile("test.txt", self.f.read())
 		form = FileForm({'slug': 'test'}, {'content': uploadedfile})
 		self.obj = form.save()
 		
@@ -42,7 +49,7 @@ class ModelAdminTests(TestCase):
 		signals.pre_save.connect(on_save, weak=False)
 
 		try:
-			uploadedfile = SimpleUploadedFile("test.txt", "file_content")
+			uploadedfile = SimpleUploadedFile("test.txt", self.f.read())
 			f1 = File.objects.create(slug="test", content=uploadedfile)
 
 			with self.assertRaises(AttributeError):
@@ -65,7 +72,7 @@ class ModelAdminTests(TestCase):
 		signals.pre_delete.connect(on_delete, weak=False)
 
 		try:
-			uploadedfile = SimpleUploadedFile("test.txt", "file_content")
+			uploadedfile = SimpleUploadedFile("test.txt", self.f.read())
 			f1 = File.objects.create(slug="test", content=uploadedfile)
 			path = f1.content.path
 			f1.delete()
@@ -75,3 +82,8 @@ class ModelAdminTests(TestCase):
 
 		finally:
 			signals.pre_delete.disconnect(on_delete)
+
+
+	def tearDown(self):
+		import os
+		os.remove("test.txt")

@@ -15,8 +15,9 @@ setup(
     packages=find_packages(exclude=['djfiles.tests']),
     include_package_data=True,
     license='BSD License',
-    description='A simple Django app to upload files in admin panel.',
+    description='A simple Django app to upload files via admin panel.',
     long_description=README,
+    url='https://github.com/luminousmen/djfiles',
     author='Bobrov Kirill',
     author_email='miaplanedo@gmail.com',
     classifiers=[
@@ -27,6 +28,8 @@ setup(
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.4' 
+        'Programming Language :: Python :: 3.5'
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],

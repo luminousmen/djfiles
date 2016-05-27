@@ -1,5 +1,7 @@
-[![Coverage Status](https://coveralls.io/repos/github/luminousmen/djfiles/badge.svg?branch=master)](https://coveralls.io/github/luminousmen/djfiles?branch=master)
+3[![Coverage Status](https://coveralls.io/repos/github/luminousmen/djfiles/badge.svg?branch=master)](https://coveralls.io/github/luminousmen/djfiles?branch=master)
 [![Build Status](https://travis-ci.org/luminousmen/djfiles.svg?branch=master)](https://travis-ci.org/luminousmen/djfiles)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000?style=flat-square)](https://github.com/luminousmen/djfiles)
+[![PyPI](https://img.shields.io/pypi/v/nine.svg?maxAge=2592000?style=flat-square)](https://github.com/luminousmen/djfiles)
 
 DJFiles
 =====

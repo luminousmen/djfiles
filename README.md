@@ -1,7 +1,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/luminousmen/djfiles/badge.svg?branch=master)](https://coveralls.io/github/luminousmen/djfiles?branch=master)
 [![Build Status](https://travis-ci.org/luminousmen/djfiles.svg?branch=master)](https://travis-ci.org/luminousmen/djfiles)
 [![PyPI version](https://badge.fury.io/py/django-djfiles.svg)](https://badge.fury.io/py/django-djfiles)
-[![licence](https://camo.githubusercontent.com/bcd5e9b1f7f3f648ca97add1262d43b0e31d25ec/687474703a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4253442d627269676874677265656e2e737667)
+[![licence](https://camo.githubusercontent.com/bcd5e9b1f7f3f648ca97add1262d43b0e31d25ec/687474703a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4253442d627269676874677265656e2e737667)](https://github.com/luminousmen/djfiles/blob/master/LICENCE)
 
 DJFiles
 =====

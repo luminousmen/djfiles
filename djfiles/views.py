@@ -6,7 +6,7 @@ from .models import File
 
 
 def get_file(request, filename):
-	
+
 	f = File.objects.get(slug=filename)
 	fs = open(f.content.path, 'r')
 	response = HttpResponse(fs)

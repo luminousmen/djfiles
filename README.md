@@ -36,3 +36,9 @@ Apply ```djfiles``` migrations:
 ```bash
 $ ./manage.py migrate djfiles
 ```
+
+Add urls to your project urls so you can get image by slug:
+
+```bash
+    urlpatterns += url(r'^djfiles/', include('djfiles.urls'))
+```

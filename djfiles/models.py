@@ -13,8 +13,9 @@ def on_delete(sender, instance, **kwargs):
             fieldfield.delete(False)
 
 
-def on_save(sender, instance, **kwargs):    
-    if not instance.id: return
+def on_save(sender, instance, **kwargs):
+    if not instance.id:
+        return
 
     if getattr(instance, '_pre_save_called_times', False):
         initial = sender.objects.get(pk=instance.id)
@@ -23,7 +24,7 @@ def on_save(sender, instance, **kwargs):
             if field and isinstance(field, models.FileField):
                 new_value = getattr(instance, field.name)
                 old_value = getattr(initial, field.name)
-                if old_value and old_value != new_value: 
+                if old_value and old_value != new_value:
                     old_value.delete(False)
 
     instance._pre_save_called_times = True
@@ -42,7 +43,6 @@ def file_upload_to(instance, filename):
     return os.path.join('files', filename)
 
 
-
 @cleanup
 class File(models.Model):
 
@@ -52,10 +52,8 @@ class File(models.Model):
     content = models.FileField(upload_to=file_upload_to)
     description = models.TextField(null=True, blank=True)
 
-
     def __unicode__(self):
         return self.slug
-
 
     def preview(self):
 
@@ -68,11 +66,9 @@ class File(models.Model):
 
     preview.allow_tags = True
 
-
     def url(self):
         return u'<a href="{0}">{0}</a>'.format(self.content.url)
     url.allow_tags = True
-
 
     class Meta:
         db_table = 'files'

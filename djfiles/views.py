@@ -1,14 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from django.http import HttpResponse
+from django.shortcuts import redirect, get_object_or_404
 
 from .models import File
 
 
 def get_file(request, filename):
 
-    f = File.objects.get(slug=filename)
-    fs = open(f.content.path, 'r')
-    response = HttpResponse(fs)
-    response['Content-Disposition'] = "attachment; filename={} - {}".format(f.content, f.slug)
-    return response
+    f = get_object_or_404(File, slug=filename)
+    return redirect(f.content.url)

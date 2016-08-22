@@ -2,6 +2,8 @@
 
 import os
 
+from slugify import slugify
+
 from django.db import models
 from django.db.models.signals import pre_delete, pre_save
 
@@ -39,7 +41,7 @@ def cleanup(cls):
 
 def file_upload_to(instance, filename):
     name, ext = os.path.splitext(filename)
-    filename = '{}{}'.format(name, ext)
+    filename = '{}{}'.format(slugify(name, only_ascii=True), ext)
     return os.path.join('files', filename)
 
 

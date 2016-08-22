@@ -22,7 +22,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-djfiles',
-    version='0.1',
+    version='0.2',
     packages=find_packages(exclude=['djfiles.tests']),
     include_package_data=True,
     license='BSD License',
@@ -43,5 +43,8 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
+    ],
+    install_requires=[
+        'slugify',
     ],
 )

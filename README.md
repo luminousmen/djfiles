@@ -14,6 +14,7 @@ Using this app you will be able to save static files through admin panel. Files 
 
 * Python >= 2.7
 * Django >= 1.8
+* unicode-slugify
 
 ### Installation
 
